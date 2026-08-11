@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: collab
+    static_configs:
+      - targets:
+          - server:8080
+          - server2:8080

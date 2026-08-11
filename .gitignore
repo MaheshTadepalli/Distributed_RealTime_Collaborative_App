@@ -1,0 +1,9 @@
+build/
+build-ninja/
+build-manual/
+.vs/
+.vscode/
+*.user
+*.tar.gz
+__pycache__/
+.pytest_cache/

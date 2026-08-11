@@ -1,0 +1,49 @@
+{
+  "title": "Collaborative Editor",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Operations / sec",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "expr": "rate(collab_ops_total[1m])",
+          "legendFormat": "ops/s"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Connected clients",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        {
+          "expr": "collab_clients_connected",
+          "legendFormat": "clients"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Commit latency",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 8 },
+      "targets": [
+        {
+          "expr": "collab_op_latency_ms{quantile=\"0.5\"}",
+          "legendFormat": "p50"
+        },
+        {
+          "expr": "collab_op_latency_ms{quantile=\"0.95\"}",
+          "legendFormat": "p95"
+        },
+        {
+          "expr": "collab_op_latency_ms{quantile=\"0.99\"}",
+          "legendFormat": "p99"
+        }
+      ]
+    }
+  ]
+}

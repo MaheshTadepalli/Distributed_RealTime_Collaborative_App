@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C++ Collaborative Editor</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="topbar">
+      <div>
+        <h1>Collaborative Editor</h1>
+        <p>Operational Transformation over WebSockets, served by modern C++.</p>
+      </div>
+      <div class="status">
+        <span id="connection" class="pill offline">Offline</span>
+        <span id="revision" class="pill">rev 0</span>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="panel">
+        <h2>Session</h2>
+        <dl>
+          <div>
+            <dt>User</dt>
+            <dd id="clientId">connecting</dd>
+          </div>
+          <div>
+            <dt>Pending ops</dt>
+            <dd id="pending">0</dd>
+          </div>
+          <div>
+            <dt>Conflict handling</dt>
+            <dd>OT transform history</dd>
+          </div>
+        </dl>
+      </aside>
+
+      <section class="editor-wrap">
+        <textarea id="editor" spellcheck="true" disabled></textarea>
+      </section>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
